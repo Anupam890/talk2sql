@@ -2,7 +2,7 @@ import { betterAuth } from "better-auth";
 import { drizzleAdapter } from "better-auth/adapters/drizzle";
 import { drizzleInstance } from "./db";
 
-const auth = betterAuth({
+const authClient = betterAuth({
   database: drizzleAdapter(drizzleInstance, {
     provider: "pg",
   }),
@@ -16,4 +16,4 @@ const auth = betterAuth({
     },
   },
 });
-export default auth;
+export default authClient;
